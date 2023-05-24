@@ -9492,15 +9492,17 @@
       "usage": {},
       "docs": "",
       "docsTags": [],
-      "encapsulation": "scoped",
+      "encapsulation": "shadow",
       "dependents": [],
       "dependencies": [
         "ix-spinner",
+        "ix-icon",
         "ix-button"
       ],
       "dependencyGraph": {
         "ix-upload": [
           "ix-spinner",
+          "ix-icon",
           "ix-button"
         ]
       },

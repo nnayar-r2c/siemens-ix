@@ -23,7 +23,7 @@ import { UploadFileState } from './upload-file-state';
 @Component({
   tag: 'ix-upload',
   styleUrl: 'upload.scss',
-  scoped: true,
+  shadow: true,
 })
 export class Upload {
   /**
@@ -90,7 +90,7 @@ export class Upload {
   @Element() hostElement!: HTMLIxUploadElement;
 
   get inputElement(): HTMLInputElement {
-    return this.hostElement.querySelector('#upload-browser');
+    return this.hostElement.shadowRoot.querySelector('#upload-browser');
   }
 
   @State() isFileOver = false;
@@ -175,14 +175,14 @@ export class Upload {
       case UploadFileState.UPLOAD_FAILED:
         return (
           <span class="state">
-            <i class="glyph glyph-error"></i>
+            <ix-icon name="error" class="error"></ix-icon>
             <span class="upload-text">{this.uploadFailedText}</span>
           </span>
         );
       case UploadFileState.UPLOAD_SUCCESSED:
         return (
           <span class="state">
-            <i class="glyph glyph-success"></i>
+            <ix-icon name="success" class="success"></ix-icon>
             <span class="upload-text">{this.uploadSuccessText}</span>
           </span>
         );
